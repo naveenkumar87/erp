@@ -1,0 +1,46 @@
+<div ng-init="initDepartmentList()" ng-controller="adminController">
+    
+    <div ng-include="'partials/includes/pageHeader.html'"></div>
+    
+    <form>
+        <div class="row btn-row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <button class="btn primary-btn" erp-click="/department">New Search</button>
+                <button class="btn primary-btn" ng-click="addDept()">Add Department</button>
+            </div>
+        </div>
+        
+        <div class="row table-responsive">
+              <div class="col-xs-12 col-md-12 col-lg-12">
+                    <table class="table table-striped table-bordered1 table-hover table-condensed">
+					   <thead>
+					      <tr>
+					        <th>Sr.</th>
+					        <th>Name</th>
+					        <th>Code</th>
+					        <th>Created On</th>
+					        <th>Created By</th>
+					        <th>Updated On</th>
+                            <th>Updated By</th>
+                            <th>Delete</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					       <tr ng-repeat="dept in depts track by $index">
+					           <td>{{ $index + 1 }}</td>
+					           <td>{{dept.name}}</td>
+					           <td><a href="javascript:void(0)" ng-click="addDept(dept.code)">{{dept.code}}</a></td>
+					           <td>{{dept.created_at | date:'medium'}}</td>
+					           <td>{{dept.created_by}}</td>
+					           <td>{{dept.updated_at | date:'medium'}}</td>
+					           <td>{{dept.updated_by}}</td>
+					           <td><i class="fa fa-trash-o deleteIcon" ng-click="deleteEntity(dept, 'deleteDept', $event)"></i></td>
+					       </tr>
+					    </tbody>
+				    </table>
+              </div>
+        </div>
+             
+    </form>
+    
+</div>

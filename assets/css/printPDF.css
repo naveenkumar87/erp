@@ -1,0 +1,376 @@
+.ui-inputtext{
+	border: 2px red;
+}
+.tohide{
+	display: none
+}
+
+/*********************** styles.css *********************/
+/* You can add global styles to this file, and also import other style files */
+.router-card > .ui-card{
+	background-color: rgb(250,250,250,0.6);
+}
+
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.red{
+	color: rgba(255,0,0,0.9);
+}
+.green{
+	color: green;
+}
+.lightseagreen{
+	color: lightseagreen;
+}
+.lightbluec{
+	color: rgba(173,216,230, 0.4);
+}
+.lightblue{
+	background-color: rgba(173,216,230, 0.4);
+}
+.mtop10{
+	margin-top: 10px;
+}
+.link{
+	color: #007ad9;
+	cursor:pointer;
+}
+.lato{
+	font-family: Lato;
+	color: #666;
+	font-size: 13px;
+	font-weight: 700;
+}
+body{
+	line-height: 1.0
+}
+
+.right{
+	text-align: right;
+}
+.fright{
+	float: right;
+}
+.f13, .f13 input{
+	font-size: 13px !important;
+}
+.f12, .f13 input{
+	font-size: 12px;
+}
+
+.ui-grid.ui-grid-pad>.ui-grid-row>div {
+    padding: .15em .3em;
+}
+
+.app-container .router-card > div > div.ui-card-body > div.ui-card-content{
+	min-height: 470px;
+	max-height: 530px;
+	overflow-x: auto;
+}
+
+body .ui-table .ui-table-tbody > tr > td {
+
+    padding: 0.471em 0.757em;
+
+}
+
+p-dropdown .ui-dropdown{
+	height: 28px;
+    padding-top: 3px;
+}
+
+p-dropdown .ui-dropdown .ui-dropdown-label{
+	position: relative;
+    top: -3px;
+}
+
+.report-form p-dropdown .ui-dropdown .ui-dropdown-label{
+	position: inherit;
+    top: 0px !important;
+}
+
+.nopad-tb{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.reset-btn{
+	margin-left: 20px !important;
+}
+.inp-btn{
+	height: 28px;
+}
+body .inp-btn .ui-button-text{
+	padding: 0.229em 1em !important;
+}
+body .ui-table .ui-table-tbody > tr.inp-row > td {
+    padding: 0.2em 0.357em;
+}
+
+
+.required{
+	color:rgba(255, 0, 0, 0.5);
+}
+
+/*body .ui-button.ui-state-default.ui-button-secondary, body .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default{
+	color: white;
+    background-color: rgba(30,30,30,1);
+}*/
+
+
+.ui-table-tbody> tr> td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body .ui-radiobutton .ui-radiobutton-box{
+	width: 18px;
+	height: 18px;
+}
+
+.scroll-margin{
+	margin-right: 17px !important;
+}
+
+.bold{
+	font-weight: bold;
+}
+.italic{
+	font-style: italic;
+}
+.msg-font{
+	font-size: 12px;
+}
+.p5{
+	padding: 5px;
+}
+.pt10{
+	padding-top: 10px;
+}
+.pt5{
+	padding-top: 5px;
+}
+.pt15{
+	padding-top: 15px;
+}
+.p10{
+	padding: 10px;
+}
+.sfield{
+	padding: 12px !important;	
+}
+
+.ml10{
+	margin-left:10px;
+}
+.mr5{
+	margin-right:5px;
+}
+.mr10{
+	margin-right:10px;
+}
+.pl10{
+	padding-left:10px;
+}
+.pr0{
+	padding-right:0px;
+}
+.pr10{
+	padding-right:10px;
+}
+.ml20{
+	margin-left:20px !important;
+}
+.mr20{
+	margin-right:20px;
+}
+.mt20 > div{
+	margin-top:20px;	
+}
+.mlm2{
+	margin-left: -2px;
+}
+
+
+.center{
+	text-align: center;
+}
+
+.alert{
+	margin-bottom: 0px;
+}
+.bs-close{
+	margin-top: -4px;
+}
+
+.title{
+	color: #5c666a;
+    font-weight: 700;
+}
+.mt5{
+	margin-top: 5px;
+}
+.mb5{
+	margin-bottom: 5px;
+}
+.mt10{
+	margin-top: 10px;
+}
+.mb10{
+	margin-bottom: 10px;
+}
+.mt20{
+	margin-top: 20px;
+}
+
+hr{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.flabel{
+	padding-top: 8px !important;
+    color: rgba(0,0,0,0.6);
+    font-weight: bold;
+}
+.flabels{
+	padding-top: 8px !important;
+    color: rgba(0,0,0,0.6);
+    font-weight: bold;
+}
+.ebold{
+	color: rgba(0,0,0,0.6);
+    font-weight: bold;	
+}
+
+.sform .flabels{
+	font-size: 12px;
+}
+
+.sform .ui-autocomplete-input, .sform .ui-dropdown-label{
+	font-size: 12px;
+}
+
+.sform p-dropdown .ui-dropdown{
+    height: 26px;
+    padding-top: 1px;
+}
+
+.sform .ui-dropdown-item, .sform .ui-autocomplete-list-item {
+	font-size: 12px;
+	padding: 0.229em 0.557em;
+}
+
+body .pi {
+    font-size: 1.0em;
+}
+
+.ui-button:not(.rbtn){
+	margin-right: 10px !important;
+}
+
+/*.table-dd .ui-dropdown, .inp-dd .ui-dropdown{
+	height: 28px;
+	padding-top: 0px;
+}*/
+
+.headerBtn .ui-button{
+	margin-right: 0px !important;	
+}
+
+.block-ui-wrapper{
+	background: rgba(130, 130, 130, 0.4) !important;	
+}
+
+.delete-icon-container, .cursor{
+	cursor:pointer;
+}
+.disabled-delete-icon{
+	color: rgba(0,0,255,0.4);
+}
+
+.pointer{
+	cursor:pointer;
+}
+
+.small-inp{
+	font-size: 12px !important;
+	padding: 0.429em !important;
+	height: 24.3px !important;
+}
+
+.small-inp input{
+	font-size: 12px !important;
+	padding: 0.429em !important;
+	height: 24.3px !important;
+}
+
+.small-inp .ui-datepicker table {
+    font-size: 12px;
+    margin: 0.457em 0 0 0;
+    height: 24.3px !important;
+}
+
+.small-table .ui-table{
+	font-size: 13px;
+}
+
+.small-table .ui-table .ui-table-tbody > tr > td {
+    padding: 0.471em 0.857em;
+}
+
+.small-table .ui-table .ui-table-thead > tr > th {
+    padding: 0.471em 0.857em;
+}
+
+.report-table .ui-widget-header{
+	height: 30px;
+}
+
+/*small-inp .ui-datepicker table td {
+    padding: 0.2em !important;
+}*/
+body .ui-datepicker table td {
+    padding: 0.2em;
+}
+
+.small-btn{
+	font-size: 12px !important;
+}
+.small-btn span{
+	padding: .25em 1em !important;
+}
+
+.no-margin{
+	margin: 0px !important;
+}
+.no-padding{
+	padding: 0px !important;
+}
+
+.rrbtn{
+	margin-left: 15px;
+}
+
+.ui-autocomplete-token-label{
+	margin-right: 1.4em;	
+}
+
+input.ui-inputtext:not(.regular-btn){
+	height: 28px;
+}
+
+@media screen and (max-width: 1240px) {
+  body .ui-widget, body .ui-inputtext, body .ui-button {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  body .ui-widget, body .ui-inputtext, body .ui-button {
+    font-size: 12px;
+  }
+}

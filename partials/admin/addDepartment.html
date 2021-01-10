@@ -1,0 +1,93 @@
+<div ng-init="initAddDepartment()" ng-controller="adminController">
+    
+    <div ng-include="'partials/includes/pageHeader.html'"></div>
+    
+    <form name="addDepartment" novalidate>
+        <div class="row btn-row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <button class="btn primary-btn" ng-click="saveDepartment()">Save</button>
+                <button ng-show="department.id == null" type="reset" class="btn">Reset</button>
+                <button class="btn" ng-show="department.id == null" erp-click="/department">Cancel</button>
+                <button class="btn" ng-show="department.id != null" ng-click="searchDepartment()">Cancel</button>
+            </div>
+        </div>
+        <div class="row hidden">
+            <input type="text" ng-model="department.id" name="id" class="form-control" />
+            <input type="text" ng-model="department.deleted" cass="form-control" />
+        </div>
+        <div class="row">
+              <label class="control-label col-xs-2 col-md-2 col-lg-2">
+                    Name <span class="required">*</span>
+              </label>
+              <div class="col-xs-3 col-md-3 col-lg-3">
+                    <input type="text" ng-model="department.name" name="dname" class="form-control" required/>
+              </div>
+        </div>
+        <div class="row">
+              <label class="control-label col-xs-2 col-md-2 col-lg-2">
+                    Code <span class="required">*</span>
+              </label>
+              <div class="col-xs-3 col-md-3 col-lg-3">
+                    <input type="text" ng-model="department.code" name="dcode" ng-keyup="validateDepart()" ng-readonly="department.id != null" class="form-control" required/>
+                    
+              </div>
+              <div class="col-xs-1 col-md-1 col-lg-1" style="padding-top: 6px;" ng-show="department.id == null">
+                    <span ng-show="loading"><i class="fa fa-spinner" aria-hidden="true"></i></span>
+                    <span ng-show="dfound"><i class="fa fa-close red" aria-hidden="true"></i></span>
+                    <span ng-show="dnotfound"><i class="fa fa-check green" aria-hidden="true"></i></span>
+              </div>
+        </div>
+        <span ng-show="department.id != null" class="pageFooter marginb10" style="width: 95%">
+	        <div class="row">
+			    <div class="col-xs-12 col-md-12 col-lg-12">
+			        <HR class="marginb10"/>
+			    </div>
+			</div>
+	
+			<div class="row">
+			    <div class="col-xs-4 col-md-4 col-lg-4">
+			        
+			    </div>
+			    <label class="col-xs-3 col-md-3 col-lg-3">
+			            On
+			    </label>
+			    <label class="col-xs-3 col-md-3 col-lg-3">
+			        By
+			    </label>
+			</div>
+			
+			<div class="row">
+			     <div class="col-xs-2 col-md-2 col-lg-2">
+                    
+                </div>
+			    <label class="col-xs-2 col-md-2 col-lg-2">
+			        Created
+			    </label>
+			    <div class="col-xs-3 col-md-3 col-lg-3">
+			            {{ department.created_at | date:'medium' }}
+			    </div>
+			    <div class="col-xs-3 col-md-3 col-lg-3">
+			        {{ department.created_by }}
+			    </div>
+			</div>
+			
+			<div class="row">
+			     <div class="col-xs-2 col-md-2 col-lg-2">
+                    
+                </div>
+			    <label class="col-xs-2 col-md-2 col-lg-2">
+			        Updated
+			    </label>
+			    <div class="col-xs-3 col-md-3 col-lg-3">
+			            {{ department.updated_at | date:'medium' }}
+			    </div>
+			    <div class="col-xs-3 col-md-3 col-lg-3">
+			        {{ department.updated_by }}
+			    </div>
+			</div>
+		</span>
+        <!-- <div ng-include="'partials/includes/pageFotter.html'" ng-show="department.id != null"></div> -->
+               
+    </form>
+    
+</div>

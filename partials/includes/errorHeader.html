@@ -1,0 +1,42 @@
+<!-- Error Messages -->
+    <div class="row ocr-error" ng-show="errors.length > 0">         
+        <div class="col-xs-12">             
+            <div class="alert fade in alert-danger">
+                <a class="close close-error" style="font-size: 15px;" href="javascript:void(0)" ng-click="errors.length = 0">x</a>
+                <h4>Error</h4>
+                <ul class="msg-ul">
+                    <li ng-repeat="error in errors track by $index">
+                        {{ error.msg }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+          
+      <!-- Warning Messages -->
+      <div class="row ocr-warning" ng-show="warnings.length > 0">
+        <div class="col-xs-12">
+          <div class="alert fade in"> <a class="close" style="font-size: 15px;" href="javascript:void(0)" ng-click="warnings.length = 0">x</a>
+            <h4>Warning</h4>
+            <ul class="msg-ul">
+                <li ng-repeat="warning in warnings track by $index">
+                    {{ warning.msg }}
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+          
+      <!-- Info Messages -->
+      <div class="row ocr-info" ng-show="infos.length > 0">
+        <div class="col-xs-12">
+          <div class="alert fade in alert-info"> <a class="close" style="font-size: 15px;" href="javascript:void(0)" ng-click="infos.length = 0">x</a>
+            <h4>Information</h4>
+            <ul class="msg-ul">
+                <li ng-repeat="info in infos track by $index">
+                    {{ info.msg }}
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>

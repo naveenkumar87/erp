@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.2.v201410272105 Build &lt;4.4.2.v20150217-1805></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="from" id="744">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="to" id="745">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="party" id="746">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="quality" id="747">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="userId" id="748">
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://localhost:3306/serp</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">dGVycA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Packing entry" id="326">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">NAME</property>
+                    <property name="alias">party</property>
+                </structure>
+                <structure>
+                    <property name="columnName">NAME_7</property>
+                    <property name="alias">shade</property>
+                </structure>
+                <structure>
+                    <property name="columnName">NAME_8</property>
+                    <property name="alias">quality</property>
+                </structure>
+                <structure>
+                    <property name="columnName">SERIAL_NO_9</property>
+                    <property name="alias">dp_no</property>
+                </structure>
+                <structure>
+                    <property name="columnName">NAME_12</property>
+                    <property name="alias">process</property>
+                </structure>
+                <structure>
+                    <property name="columnName">NAME_16</property>
+                    <property name="alias">unit</property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">pid</property>
+                    <property name="paramName">id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">SERIAL_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">DEL_DATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">BALE_NO</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">LOT_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">party</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">THAN</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">shade</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">quality</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">dp_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">BILTY_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">LR_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">process</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">FOLD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">NOTES</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">LENGTH</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">unit</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">RECEIVED_DT</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">SERIAL_NO</property>
+                    <property name="nativeName">SERIAL_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">DEL_DATE</property>
+                    <property name="nativeName">DEL_DATE</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">BALE_NO</property>
+                    <property name="nativeName">BALE_NO</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">LOT_NO</property>
+                    <property name="nativeName">LOT_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">NAME</property>
+                    <property name="nativeName">NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">THAN</property>
+                    <property name="nativeName">THAN</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">NAME_7</property>
+                    <property name="nativeName">NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">NAME_8</property>
+                    <property name="nativeName">NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">SERIAL_NO_9</property>
+                    <property name="nativeName">SERIAL_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">BILTY_NO</property>
+                    <property name="nativeName">BILTY_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">LR_NO</property>
+                    <property name="nativeName">LR_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">NAME_12</property>
+                    <property name="nativeName">NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">FOLD</property>
+                    <property name="nativeName">FOLD</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">NOTES</property>
+                    <property name="nativeName">NOTES</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">LENGTH</property>
+                    <property name="nativeName">LENGTH</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">NAME_16</property>
+                    <property name="nativeName">NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">RECEIVED_DT</property>
+                    <property name="nativeName">RECEIVED_DT</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select
+
+p.serial_no,
+p.DEL_DATE,
+p.BALE_NO,
+grey.LOT_NO,
+party.name as party,
+dpd.THAN,
+shade.name as shade,
+quality.name as quality,
+dp.serial_no as dp_no,
+grey.BILTY_NO,
+p.LR_NO,
+process.name as process,
+p.FOLD,
+p.NOTES,
+p.LENGTH,
+unit.name as unit,
+dp.RECEIVED_DT as program_date
+
+from
+PROCESS_PACKING p
+inner join DEYING_PROGRAM_DETAIL_V2 dpd on dpd.id = p.DYEING_DETAIL_ID
+inner join LOT_ENTRY lot on lot.id = dpd.LOT_ID
+inner join GREY_INWARD grey on grey.id = lot.GREYINWARD_ID
+inner join PARTIES party on party.id = grey.PARTY_ID
+inner join SHADES shade on shade.id = dpd.SHADE_ID
+inner join masters quality on quality.id = grey.QUALITY_ID
+inner join DEYING_PROGRAM_V2 dp on dp.id = dpd.DEYING_PROGRAM_ID
+inner join masters process on process.id = p.PROCESS_ID
+left join masters unit on unit.id = p.UNIT_ID
+where p.id = ?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Lot details" id="499">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints"/>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">from</property>
+                    <property name="paramName">from</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">to</property>
+                    <property name="paramName">to</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ID</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">SERIAL_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">lotDate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">LOT_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">NAME_6</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">LR_NO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">RECEIVED_LENGTH</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">BALANCE</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">sent</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[if(params["party"].value!=null &amp;&amp; params["party"].value=="y"){
+    this.queryText = this.queryText +" and party.id in (select data_id from report_user_data where REPORT_TYPE=1 and TYPE_ID=1 and USER_ID="+params["userId"].value+")";
+}
+if(params["quality"].value!=null &amp;&amp; params["quality"].value=="y"){
+    this.queryText = this.queryText +" and q.id in (select data_id from report_user_data where REPORT_TYPE=1 and TYPE_ID=2 and USER_ID="+params["userId"].value+")";
+}
+this.queryText = this.queryText + " order by q.name";]]></method>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ID</property>
+                    <property name="nativeName">ID</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NAME</property>
+                    <property name="nativeName">NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">SERIAL_NO</property>
+                    <property name="nativeName">SERIAL_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">lotDate</property>
+                    <property name="nativeName">lotDate</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">LOT_NO</property>
+                    <property name="nativeName">LOT_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">NAME_6</property>
+                    <property name="nativeName">NAME</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">LR_NO</property>
+                    <property name="nativeName">LR_NO</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">RECEIVED_LENGTH</property>
+                    <property name="nativeName">RECEIVED_LENGTH</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">BALANCE</property>
+                    <property name="nativeName">BALANCE</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">sent</property>
+                    <property name="nativeName">sent</property>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select
+	grey.id as greyId,
+	party.name as pname,
+	lot.SERIAL_NO as gsno,
+	DATE_FORMAT(lot.RECEIVED_DT, '%d-%m-%Y') as lotDate,
+	grey.lot_no as lotNo,
+	q.name as qname,
+	grey.lr_no as lrno,
+	lot.RECEIVED_LENGTH as than,
+	lot.balance as balance,
+	lot.RECEIVED_LENGTH - lot.balance as sent
+from
+	lot_entry lot 
+	inner join grey_inward grey on grey.id = lot.GREYINWARD_ID
+	inner join parties party on party.id = grey.party_id
+	left join masters q on q.id = grey.QUALITY_ID
+	where date(lot.RECEIVED_DT) >= str_to_date(?, '%d-%m-%Y') AND date(lot.RECEIVED_DT) <= str_to_date(?, '%d-%m-%Y')]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="16">
+            <property name="canShrink">false</property>
+            <property name="height">3.5625in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">RUNNINGSUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">Total.sum(dataSetRow["THAN"])</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">dataSetRow["THAN"]</property>
+                    <text-property name="displayName">than</text-property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["THAN"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="17"/>
+            <row id="18">
+                <property name="height">0.4583333333333333in</property>
+                <cell id="19">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="24">
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="paddingTop">8px</property>
+                        <property name="paddingBottom">8px</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Fabric Report</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="132">
+                <property name="height">0.3125in</property>
+                <cell id="133">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="paddingTop">8px</property>
+                    <label id="498">
+                        <property name="paddingTop">0pt</property>
+                        <text-property name="text">Party Wise Lot Stock Fabric Report</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="558">
+                <cell id="559">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="height">100%</property>
+                    <table id="620">
+                        <property name="width">7.875in</property>
+                        <property name="dataSet">Lot details</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ID</property>
+                                <text-property name="displayName">greyId</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SERIAL_NO</property>
+                                <text-property name="displayName">gsno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["SERIAL_NO"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">lotDate</property>
+                                <text-property name="displayName">lotDate</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["lotDate"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">LOT_NO</property>
+                                <text-property name="displayName">lotNo</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["LOT_NO"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NAME</property>
+                                <text-property name="displayName">qname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["NAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">LR_NO</property>
+                                <text-property name="displayName">lrno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["LR_NO"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">RECEIVED_LENGTH</property>
+                                <text-property name="displayName">than</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["RECEIVED_LENGTH"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">BALANCE</property>
+                                <text-property name="displayName">balance</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["BALANCE"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">sent</property>
+                                <text-property name="displayName">sent</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["sent"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NAME_6</property>
+                                <text-property name="displayName">qname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["NAME_6"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Party</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">dataSetRow["RECEIVED_LENGTH"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation_1</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Party</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">dataSetRow["BALANCE"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation_2</property>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Party</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">dataSetRow["sent"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <column id="669">
+                            <property name="width">0.3958333333333333in</property>
+                        </column>
+                        <column id="670">
+                            <property name="width">1.0104166666666667in</property>
+                        </column>
+                        <column id="671">
+                            <property name="width">0.9583333333333334in</property>
+                        </column>
+                        <column id="672">
+                            <property name="width">1.0104166666666667in</property>
+                        </column>
+                        <column id="673">
+                            <property name="width">1.8645833333333333in</property>
+                        </column>
+                        <column id="674">
+                            <property name="width">0.71875in</property>
+                        </column>
+                        <column id="675">
+                            <property name="width">0.8020833333333334in</property>
+                        </column>
+                        <column id="676">
+                            <property name="width">0.6458333333333334in</property>
+                        </column>
+                        <column id="677">
+                            <property name="width">0.46875in</property>
+                        </column>
+                        <header>
+                            <row id="621">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="height">0.2916666666666667in</property>
+                                <cell id="622"/>
+                                <cell id="624">
+                                    <label id="679">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Inw. No</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="626">
+                                    <label id="680">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Date</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="628">
+                                    <label id="681">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Lot No</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="630">
+                                    <label id="682">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Quality</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="632">
+                                    <label id="684">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">LR No</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="634">
+                                    <label id="515">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Received</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="636">
+                                    <label id="517">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Balance</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="638">
+                                    <label id="519">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">Sent</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <group id="718">
+                            <property name="groupName">Party</property>
+                            <expression name="keyExpr" type="javascript">row["NAME"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue" type="javascript">row["NAME"]</expression>
+                            </structure>
+                            <property name="hideDetail">false</property>
+                            <header>
+                                <row id="719">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <cell id="720">
+                                        <property name="colSpan">5</property>
+                                        <property name="rowSpan">1</property>
+                                        <property name="paddingTop">5pt</property>
+                                        <property name="paddingBottom">5pt</property>
+                                        <data id="739">
+                                            <property name="resultSetColumn">NAME</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="725"/>
+                                    <cell id="726"/>
+                                    <cell id="727"/>
+                                    <cell id="728"/>
+                                </row>
+                            </header>
+                            <footer>
+                                <row id="729">
+                                    <property name="backgroundColor">#EFE9EF</property>
+                                    <property name="borderTopStyle">dotted</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <cell id="730"/>
+                                    <cell id="731"/>
+                                    <cell id="732"/>
+                                    <cell id="733"/>
+                                    <cell id="734"/>
+                                    <cell id="735">
+                                        <label id="740">
+                                            <property name="fontWeight">bold</property>
+                                            <text-property name="text">Total:</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="736">
+                                        <data id="741">
+                                            <property name="resultSetColumn">Aggregation</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="737">
+                                        <data id="742">
+                                            <property name="resultSetColumn">Aggregation_1</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="738">
+                                        <data id="743">
+                                            <property name="resultSetColumn">Aggregation_2</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </footer>
+                        </group>
+                        <detail>
+                            <row id="640">
+                                <cell id="641"/>
+                                <cell id="643">
+                                    <data id="644">
+                                        <property name="resultSetColumn">SERIAL_NO</property>
+                                    </data>
+                                </cell>
+                                <cell id="645">
+                                    <data id="646">
+                                        <property name="resultSetColumn">lotDate</property>
+                                    </data>
+                                </cell>
+                                <cell id="647">
+                                    <data id="648">
+                                        <property name="resultSetColumn">LOT_NO</property>
+                                    </data>
+                                </cell>
+                                <cell id="649">
+                                    <data id="686">
+                                        <property name="resultSetColumn">NAME_6</property>
+                                    </data>
+                                </cell>
+                                <cell id="651">
+                                    <data id="652">
+                                        <property name="resultSetColumn">LR_NO</property>
+                                    </data>
+                                </cell>
+                                <cell id="653">
+                                    <data id="654">
+                                        <property name="resultSetColumn">RECEIVED_LENGTH</property>
+                                    </data>
+                                </cell>
+                                <cell id="655">
+                                    <data id="656">
+                                        <property name="resultSetColumn">BALANCE</property>
+                                    </data>
+                                </cell>
+                                <cell id="657">
+                                    <data id="658">
+                                        <property name="resultSetColumn">sent</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="659">
+                                <cell id="660"/>
+                                <cell id="661"/>
+                                <cell id="662"/>
+                                <cell id="663"/>
+                                <cell id="664"/>
+                                <cell id="665"/>
+                                <cell id="666"/>
+                                <cell id="667"/>
+                                <cell id="668"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome To TexERP</title>
+
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="img/favicon-srpl.ico" type="image/x-icon" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/lib/bootstrap/bootstrap 3.3.2.css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/lib/bootstrap/popper.js"></script>
+    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+
+    <!-- erp -->
+    <link rel="stylesheet" href="css/erp.css">
+    <script src="js/erp.js"></script>
+    
+    
+    <!-- Angular JS libs -->
+	<script type='text/javascript' src='js/lib/angular1.6/angular.js'></script>
+    <script type='text/javascript' src='js/lib/angular1.6/angular-route.js'></script>
+    <script type='text/javascript' src='js/lib/angular1.6/angular-sanitize.js'></script>
+    <script type='text/javascript' src='js/lib/angular1.6/angular-animate.js'></script>
+    <script type='text/javascript' src='js/lib/angular1.6/angular-touch.js'></script>
+    <script type='text/javascript' src='js/lib/angular1.6/angular-resource.js'></script>
+    <script type='text/javascript' src="js/lib/angular1.6/angular-cookies.js"></script>
+    <script type='text/javascript' src="js/lib/angular1.6/angular-ui/ui-bootstrap-custom-2.5.0.js"></script>
+    <script type='text/javascript' src="js/lib/angular1.6/angular-ui/ui-bootstrap-custom-tpls-2.5.0.min.js"></script>
+    <script type='text/javascript' src="js/lib/angular1.6/angular-animate.js"></script>
+    
+    <script src="js/app.js"></script>
+    
+    <!-- Angular material -->
+    <link href="js/lib/angular1.6/angular-material/angular-material.css" rel="stylesheet" />
+    <script type='text/javascript' src="js/lib/angular1.6/angular-material/angular-aria.js"></script>
+    <script type='text/javascript' src="js/lib/angular1.6/angular-material/angular-material.js"></script>
+    
+    <script type='text/javascript' src="js/factory/commonFactory.js"></script>
+    <script type='text/javascript' src="js/service/commonService.js"></script>
+    
+    <script type='text/javascript' src="js/directive/navigate.js"></script>
+    
+    <script type='text/javascript' src="js/controller/adminController.js"></script>
+    <script type='text/javascript' src="js/controller/masterController.js"></script>
+    
+    <!-- <base href="/"> -->
+    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body ng-app="dashboardApp" ng-cloak>
+    
+    <!-- Preloader -->
+     <div id="preloader" class="loading-spiner-holder" data-scroll="true" data-load="true" data-gtn-loading>
+         <img src="img/loading.gif" >
+         <!-- <img src="TexERP/img/GD.gif" > -->
+     </div>
+            
+    <!-- Menu HTML -->
+    <div ng-include="'partials/includes/menu.html'"></div>
+ 
+    
+    <!-- Main view of ERP -->
+    <div class="dashboard-container container-fluid {{user.erpclass}}" ng-init="init()" ng-controller="controller" id="dashboardParentController" ng-cloak>
+        
+        <div class="row">
+               <div class="col-xs-1 col-md-1 col-lg-1"></div>
+               <md-card class="col-xs-10 col-md-10 col-lg-10" style="min-height: 500px;">
+		         
+		         <md-card-content>
+		              <ng-view></ng-view>
+		         </md-card-content>
+		         <!-- <md-card-footer>
+		           Card footer
+		         </md-card-footer> -->
+		       </md-card>
+		       
+                <div class="col-xs-1 col-md-1 col-lg-1"></div>
+        </div>
+        
+    
+        
+    </div>
+    
+    
+    
+    <script type="text/ng-template" id="error.html">
+    <!-- Error Messages -->
+    <div class="row ocr-error" ng-controller="controller" ng-show="errors.length > 0">         
+        <div class="col-xs-12">             
+            <div class="alert fade in alert-danger">
+                <a class="close close-error" style="font-size: 15px;" href="javascript:void(0)" ng-click="errors.length = 0">x</a>
+                <h4>Error</h4>
+                <ul class="msg-ul">
+                    <li ng-repeat="error in errors track by $index">
+                        {{ error.msg }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+          
+      <!-- Warning Messages -->
+      <div class="row ocr-warning" ng-show="warnings.length > 0">
+        <div class="col-xs-12">
+          <div class="alert fade in"> <a class="close" style="font-size: 15px;" href="javascript:void(0)" ng-click="warnings.length = 0">x</a>
+            <h4>Warning</h4>
+            <ul class="msg-ul">
+                <li ng-repeat="warning in warnings track by $index">
+                    {{ warning.msg }}
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+          
+      <!-- Info Messages -->
+      <div class="row ocr-info" ng-show="infos.length > 0">
+        <div class="col-xs-12">
+          <div class="alert fade in alert-info"> <a class="close" style="font-size: 15px;" href="javascript:void(0)" ng-click="infos.length = 0">x</a>
+            <h4>Information</h4>
+            <ul class="msg-ul">
+                <li ng-repeat="info in infos track by $index">
+                    {{ info.msg }}
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </script>
+    
+</body>
+
+</html>
